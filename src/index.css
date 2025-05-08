@@ -7,7 +7,7 @@
 
 html,
 body {
-  width: 100dvw;
+  width: 100%;
   overflow-x: hidden;
   background-color: black;
   color: white;
@@ -16,7 +16,9 @@ body {
 }
 
 section {
-  width: 100dvw;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 @theme {
@@ -81,7 +83,7 @@ section {
   }
 
   .hero-layout {
-    @apply relative z-10 xl:mt-20 mt-32 md:h-dvh h-[80vh] flex xl:items-center items-start justify-center;
+    @apply relative z-10 xl:mt-20 mt-32 md:h-screen h-[80vh] flex xl:items-center items-start justify-center;
   }
 
   .hero-text {
@@ -99,7 +101,7 @@ section {
   }
 
   .hero-3d-layout {
-    @apply xl:w-[70%] w-full h-full min-h-[50vh] absolute xl:-top-20 top-24 xl:-right-20 right-0;
+    @apply xl:w-[70%] w-full h-full min-h-[50vh] absolute xl:-top-20 top-24 right-0 max-w-full;
   }
 
   .navbar {

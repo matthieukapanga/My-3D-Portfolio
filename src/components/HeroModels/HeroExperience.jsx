@@ -11,22 +11,25 @@ const HeroExperience = () => {
     const isTablet = useMediaQuery({ query: "(max-width: 1024px)" });
     const controlsRef = useRef();
     
-    // Disable touch zoom on mobile
+    // Disable touch events on mobile completely
     useEffect(() => {
         if (isMobile) {
-            // Disable any touch events that might cause zooming
+            // Prevent all touch events on the canvas to avoid interfering with scrolling
             const canvas = document.querySelector('canvas');
             if (canvas) {
                 canvas.addEventListener('touchmove', (e) => {
-                    if (e.touches.length > 1) {
-                        e.preventDefault();
-                    }
+                    e.preventDefault();
+                }, { passive: false });
+                
+                canvas.addEventListener('touchstart', (e) => {
+                    e.preventDefault();
                 }, { passive: false });
             }
         }
     }, [isMobile]);
     
     return (
+        
         <Canvas camera={{position: [0, 0, 15], fov: 45}}> 
             <ambientLight intensity={0.2} color="#1a1a40" />
             <OrbitControls 
@@ -40,6 +43,7 @@ const HeroExperience = () => {
                 minDistance={5}
                 minPolarAngle={Math.PI/5}
                 maxPolarAngle={Math.PI/2}
+                enabled={!isMobile} // Disable controls completely on mobile
                 touches={{ ONE: THREE.TOUCH.ROTATE, TWO: undefined, THREE: undefined }}
             />
 

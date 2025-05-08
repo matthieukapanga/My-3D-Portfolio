@@ -63,7 +63,7 @@ const NavBar = () => {
             <nav className='mobile-nav'>
               <ul className='flex flex-col items-center gap-8'>
                 {navLinks.map(({link, name}) => (
-                  <li key={name} className='text-white text-2xl font-medium'>
+                  <li key={name} className='text-white-50 text-2xl font-medium'>
                     <a 
                       href={link} 
                       onClick={closeMobileMenu}
@@ -77,11 +77,9 @@ const NavBar = () => {
                   <a 
                     href='#contact' 
                     onClick={closeMobileMenu}
-                    className='contact-btn-mobile group'
+                    className='hover:text-blue-400 transition-colors duration-300 text-white-50 text-2xl font-medium'
                   >
-                    <div className='inner'>
-                      <span>Contact Me</span>
-                    </div>
+                    Contact Me
                   </a>
                 </li>
               </ul>
