@@ -5,11 +5,11 @@ import Button from '../components/Button'
 const Certificates = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const certificateImages = [
-    '/images/CertificatesThumbails/Bachelor certificate .png',
-    '/images/CertificatesThumbails/Learn HTML and CSS Certificate.png',
-    '/images/CertificatesThumbails/Learn JavaScript.png',
-    '/images/CertificatesThumbails/Matthieu-Kapanga--Introduction-to-Python-Programming-for-Data-Science.png',
-    '/images/CertificatesThumbails/responsive web design.png'
+    'images/CertificatesThumbails/Bachelor certificate .png',
+    'images/CertificatesThumbails/Learn HTML and CSS Certificate.png',
+    'images/CertificatesThumbails/Learn JavaScript.png',
+    'images/CertificatesThumbails/Matthieu-Kapanga--Introduction-to-Python-Programming-for-Data-Science.png',
+    'images/CertificatesThumbails/responsive web design.png'
   ];
 
   // Auto-rotate certificates every 3 seconds
@@ -40,7 +40,7 @@ const Certificates = () => {
   const CVButton = () => {
     return (
       <a 
-        href="/images/MY ATS CV2.pdf" 
+        href="images/MY ATS CV2.pdf" 
         target="_blank" 
         rel="noopener noreferrer"
         className="cta-wrapper"
@@ -49,7 +49,7 @@ const Certificates = () => {
           <div className='bg-circle'/>
           <p className='text'>View My CV</p>
           <div className='arrow-wrapper md:ml-4 flex items-center '>
-            <img src='/images/arrow-right.svg' alt='arrow' className='w-4 h-4'/>
+            <img src='images/arrow-right.svg' alt='arrow' className='w-4 h-4'/>
           </div>
         </div>
       </a>
@@ -93,7 +93,7 @@ const Certificates = () => {
                   className='bg-white/80 hover:bg-white p-2 rounded-full'
                 >
                   <img 
-                    src='/images/arrow-right.svg' 
+                    src='images/arrow-right.svg' 
                     alt='Previous' 
                     className='w-5 h-5 transform rotate-180' 
                   />
@@ -112,7 +112,7 @@ const Certificates = () => {
                   onClick={goToNext}
                   className='bg-white/80 hover:bg-white p-2 rounded-full'
                 >
-                  <img src='/images/arrow-right.svg' alt='Next' className='w-5 h-5' />
+                  <img src='images/arrow-right.svg' alt='Next' className='w-5 h-5' />
                 </button>
               </div>
             </div>

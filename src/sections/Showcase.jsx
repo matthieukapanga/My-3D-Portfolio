@@ -42,7 +42,7 @@ const Showcase = () => {
                 {/* LEFT */}
                 <div className='first-project-wrapper' ref={project1Ref}>
                     <div className='image-wrapper'>
-                       <a href='http://matthieukapanga.github.io/EvolutionExtremeMobileBar/'target='_blank'><img src='/images/EvolutionExtreme.png'  alt='Ryde'/></a> 
+                       <a href='http://matthieukapanga.github.io/EvolutionExtremeMobileBar/'target='_blank'><img src='images/EvolutionExtreme.png'  alt='Ryde'/></a>
                     </div>
                     <div className='text-content'>
                         <h2>On-Demand cocktail catering service user-friendly website for Evolution Extreme Mobile Bar</h2>
@@ -53,13 +53,13 @@ const Showcase = () => {
                 <div className='project-list-wrapper overflow-hidden'>
                     <div className='project' ref={project2Ref}>
                         <div className='image-wrapper bg-[#ffefdb]'>
-                           <a href='https://matthieukapanga.github.io/Password-Generator/' target='_blank'><img src='/images/calculator.png' alt='Paasword Generator thumbnail'/></a> 
+                           <a href='https://matthieukapanga.github.io/Password-Generator/' target='_blank'><img src='images/calculator.png' alt='Paasword Generator thumbnail'/></a>
                         </div>
                             <h2>Password Generator</h2>
                     </div>
                     <div className='project' ref={project3Ref}>
                         <div className='image-wrapper bg-[#ffe7eb]'>
-                        <a href='https://matthieukapanga.github.io/Apple_iPhone_Clone/' target='_blank'> <img src='/images/Apple-Clone.png' alt='Apple'/></a>
+                        <a href='https://matthieukapanga.github.io/Apple_iPhone_Clone/' target='_blank'> <img src='images/Apple-Clone.png' alt='Apple'/></a>
                         </div>
                             <h2>Apple Clone Project</h2>
                     </div>
