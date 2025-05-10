@@ -23,17 +23,25 @@ const Contact = () => {
     const handleSubmit = async (e) => {
       e.preventDefault();
       setLoading(true); // Show loading state
-  
+
       try {
-        await emailjs.sendForm(
+        // Use send method with template parameters to ensure data is properly mapped
+        await emailjs.send(
           import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
           import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
-          formRef.current,
+          {
+            name: form.name,
+            email: form.email,
+            message: form.message,
+            from_name: form.name,
+            from_email: form.email,
+            to_name: "Matthieu"
+          },
           import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
         );
   
         // Reset form and stop loading
-        setForm({ name: " ", email: " ", message: " " });
+        setForm({ name: "", email: "", message: "" });
       } catch (error) {
         console.error("EmailJS Error:", error); // Optional: show toast
       } finally {
@@ -58,6 +66,9 @@ const Contact = () => {
                             <input 
                                 type='text' 
                                 id='name' 
+                                name='name'
+                                value={form.name}
+                                onChange={handleChange}
                                 placeholder='Your name' 
                                 className='bg-[#1c1c24] border border-[#3a3a43] rounded-lg p-4 text-white'
                             />
@@ -67,6 +78,9 @@ const Contact = () => {
                             <input 
                                 type='email' 
                                 id='email' 
+                                name='email'
+                                value={form.email}
+                                onChange={handleChange}
                                 placeholder='Your email address' 
                                 className='bg-[#1c1c24] border border-[#3a3a43] rounded-lg p-4 text-white'
                             />
@@ -75,6 +89,9 @@ const Contact = () => {
                             <label htmlFor='message' className='font-medium'>Message</label>
                             <textarea 
                                 id='message' 
+                                name='message'
+                                value={form.message}
+                                onChange={handleChange}
                                 rows='6' 
                                 placeholder='Your message' 
                                 className='bg-[#1c1c24] border border-[#3a3a43] rounded-lg p-4 text-white resize-none'
